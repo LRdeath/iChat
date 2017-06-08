@@ -28,7 +28,7 @@ ext{
     VersionName = '1.0.0'
 
     //相关依赖库版本
-    supportVersion = '26.0.0-alpha1'
+    supportVersion = '25.0.1'
 
     //butterknife 依赖库版本
     butterknifeVersion = '8.6.0'

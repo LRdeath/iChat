@@ -1,15 +1,39 @@
 package io.github.weizc.italker.push;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import io.github.weizc.itakler.common.Common;
+import butterknife.BindView;
+import butterknife.OnClick;
+import io.github.weizc.itakler.common.app.Activity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity implements IView {
+    @BindView(R.id.tv_main)
+    TextView tv_mian;
+    @BindView(R.id.et_main)
+    EditText editText;
+    IPresenter mPresenter;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getContentLayoutId() {
+        return R.layout.activity_main;
+    }
+
+
+    @OnClick(R.id.bt_main)
+    public void submit() {
+        if (mPresenter == null) mPresenter = new Presenter(this);
+        mPresenter.search();
+    }
+
+    @Override
+    public void setResultString(String result) {
+        tv_mian.setText(result);
+    }
+
+    @Override
+    public String getResultString() {
+        return String.valueOf(editText.getText());
     }
 }
