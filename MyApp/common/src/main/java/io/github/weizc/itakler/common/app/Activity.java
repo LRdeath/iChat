@@ -3,7 +3,6 @@ package io.github.weizc.itakler.common.app;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.*;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
