@@ -24,8 +24,8 @@ public abstract class Activity extends AppCompatActivity {
         if (initArgs(getIntent().getExtras())) {
             int layId = getContentLayoutId();
             setContentView(layId);
-            initData();
             initWidget();
+            initData();
         } else {
             finish();
         }
