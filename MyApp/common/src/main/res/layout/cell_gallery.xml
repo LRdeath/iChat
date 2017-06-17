@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.github.weizc.itakler.common.widget.SquareView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ImageView
+        android:id="@+id/gallery_im"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+    <View
+        android:id="@+id/gallery_shade"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/maskChatHeader"/>
+
+    <CheckBox
+        android:id="@+id/gallery_cb"
+        android:layout_width="@dimen/len_20"
+        android:layout_height="@dimen/len_20"
+        android:layout_gravity="end"
+        android:layout_margin="@dimen/len_2"
+        android:button="@drawable/sel_cb_circle"
+        android:buttonTint="@color/cb_gallery"
+        android:checked="false"
+        android:enabled="false"
+        android:visibility="gone"
+        tools:visibility="visible" />
+</io.github.weizc.itakler.common.widget.SquareView>

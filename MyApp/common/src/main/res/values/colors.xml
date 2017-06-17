@@ -24,7 +24,7 @@
     <color name="alertImportant">#f98d2c</color>
 
     <!--遮罩颜色-->
-    <color name="maskChatHeader">@color/black_alpha_48</color>
+    <color name="maskChatHeader">@color/black_alpha_64</color>
     <!--导航栏 遮罩颜色-->
     <color name="navIconTintLight">@color/white_alpha_240</color>
 </resources>

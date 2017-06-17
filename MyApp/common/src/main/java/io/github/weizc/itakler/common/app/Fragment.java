@@ -40,8 +40,13 @@ public abstract class Fragment extends android.support.v4.app.Fragment {
                 ((ViewGroup) mRoot.getParent()).removeView(mRoot);
             }
         }
-
         return mRoot;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initData();
     }
 
     /**
