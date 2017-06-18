@@ -8,8 +8,12 @@ import io.github.weizc.itakler.common.app.Fragment;
 import io.github.weizc.itakler.common.widget.GalleryView;
 import io.github.weizc.italker.push.R;
 
+
 /**
- * A simple {@link Fragment} subclass.
+ *
+ * @author Vzc
+ * @version 1.0.0
+ * @Date 2017/6/18.
  */
 public class GroupFragment extends Fragment implements GalleryView.SelectedChangeListener{
     @BindView(R.id.galleryView)

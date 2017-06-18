@@ -18,11 +18,13 @@ import net.qiujuer.genius.ui.Ui;
 import net.qiujuer.genius.ui.widget.FloatActionButton;
 
 import java.util.Objects;
+import java.util.logging.Handler;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import io.github.weizc.itakler.common.app.Activity;
 import io.github.weizc.itakler.common.widget.PortraitView;
+import io.github.weizc.italker.push.activities.AccountActivity;
 import io.github.weizc.italker.push.frags.main.ActiveFragment;
 import io.github.weizc.italker.push.frags.main.ContactFragment;
 import io.github.weizc.italker.push.frags.main.GroupFragment;
@@ -58,7 +60,7 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
 
     @OnClick(R.id.btn_action)
     public void onAction() {
-
+        AccountActivity.show(this);
     }
 
     @Override

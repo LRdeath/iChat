@@ -9,7 +9,7 @@ import android.widget.TabHost;
 
 
 /**
- * 解决对Fragment
+ * 解决对Fragment切换的处理
  *
  * @author Vzc  Email:newlr@foxmail.com
  * @version 1.0.0

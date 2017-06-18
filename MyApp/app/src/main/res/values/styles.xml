@@ -21,6 +21,7 @@
     </style>
 
     <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base" />
+    <style name="AppTheme.Account" parent="AppTheme.TransStatusBar"/>
 
     <style name="AppTheme.Main" parent="AppTheme.TransStatusBar">
         <item name="toolbarTitleColor">@color/white</item>
