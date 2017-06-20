@@ -1,5 +1,7 @@
 package io.github.weizc.italker.push;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.view.Menu;
@@ -25,6 +27,7 @@ import butterknife.OnClick;
 import io.github.weizc.itakler.common.app.Activity;
 import io.github.weizc.itakler.common.widget.PortraitView;
 import io.github.weizc.italker.push.activities.AccountActivity;
+import io.github.weizc.italker.push.frags.assist.PermissionsFragment;
 import io.github.weizc.italker.push.frags.main.ActiveFragment;
 import io.github.weizc.italker.push.frags.main.ContactFragment;
 import io.github.weizc.italker.push.frags.main.GroupFragment;
@@ -82,9 +85,18 @@ public class MainActivity extends Activity implements BottomNavigationView.OnNav
                         this.view.setBackground(glideDrawable.getCurrent());
                     }
                 });
+        PermissionsFragment.hadAllPermission(this,getSupportFragmentManager());
     }
 
 
+    /**
+     * MainActivity 显示的入口
+     *
+     * @param context 上下文
+     */
+    public static void show(Context context) {
+        context.startActivity(new Intent(context, MainActivity.class));
+    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 

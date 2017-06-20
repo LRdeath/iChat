@@ -4,12 +4,6 @@
     android:layout_height="match_parent"
     tools:context="io.github.weizc.italker.push.frags.main.GroupFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <io.github.weizc.itakler.common.widget.GalleryView
-        android:id="@+id/galleryView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:padding="1dp"/>
+
 
 </FrameLayout>

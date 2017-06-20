@@ -16,8 +16,7 @@ import io.github.weizc.italker.push.R;
  * @Date 2017/6/18.
  */
 public class GroupFragment extends Fragment implements GalleryView.SelectedChangeListener{
-    @BindView(R.id.galleryView)
-     GalleryView mGallery;
+
     public GroupFragment() {
         // Required empty public constructor
     }
@@ -26,7 +25,6 @@ public class GroupFragment extends Fragment implements GalleryView.SelectedChang
     @Override
     protected void initData() {
         super.initData();
-        mGallery.setup(getLoaderManager(),this);
     }
 
 

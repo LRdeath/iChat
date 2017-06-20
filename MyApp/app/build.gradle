@@ -27,8 +27,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     //noinspection GradleCompatible
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
-    compile project(':lang')
-    compile project(':common')
+    compile 'com.android.support:support-v4:25.3.1'
+    compile project(':factory')
     //noinspection GradleCompatible
     apply plugin: 'announce'
 
@@ -42,9 +42,9 @@ dependencies {
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     compile "com.github.yalantis:ucrop:$rootProject.ext.ucropVersion"
+    compile "pub.devrel:easypermissions:$rootProject.ext.easyPMVersion"
 
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
 
 
-    compile 'com.android.support:support-v4:25.3.1'
 }
