@@ -47,7 +47,7 @@ public class PermissionsFragment extends BottomSheetDialogFragment implements Ea
         root.findViewById(R.id.btn_submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requiresAllPermission(getContext());
+                requiresAllPermission();
             }
         });
         return root;
@@ -148,10 +148,9 @@ public class PermissionsFragment extends BottomSheetDialogFragment implements Ea
 
     /**
      * 申请所有权限
-     * @param context
      */
     @AfterPermissionGranted(RC_CAMERA_AND_LOCATION)
-    private void requiresAllPermission(Context context) {
+    private void requiresAllPermission() {
         String[] perms = {
                 Manifest.permission.INTERNET,
                 Manifest.permission.ACCESS_NETWORK_STATE,
@@ -160,6 +159,7 @@ public class PermissionsFragment extends BottomSheetDialogFragment implements Ea
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.RECORD_AUDIO
         };
+        Context context  = getContext();
         if (EasyPermissions.hasPermissions(context, perms)) {
             Application.showToast(R.string.label_permission_ok);
             //Fragment 中调用getView得到根布局，前提是在onCreateView方法后

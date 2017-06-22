@@ -1,4 +1,4 @@
-package io.github.weizc.italker.push;
+package io.github.weizc.italker.push.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,13 +20,12 @@ import net.qiujuer.genius.ui.Ui;
 import net.qiujuer.genius.ui.widget.FloatActionButton;
 
 import java.util.Objects;
-import java.util.logging.Handler;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import io.github.weizc.itakler.common.app.Activity;
 import io.github.weizc.itakler.common.widget.PortraitView;
-import io.github.weizc.italker.push.activities.AccountActivity;
+import io.github.weizc.italker.push.R;
 import io.github.weizc.italker.push.frags.assist.PermissionsFragment;
 import io.github.weizc.italker.push.frags.main.ActiveFragment;
 import io.github.weizc.italker.push.frags.main.ContactFragment;

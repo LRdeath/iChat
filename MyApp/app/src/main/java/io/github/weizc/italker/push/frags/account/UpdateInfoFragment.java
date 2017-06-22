@@ -16,6 +16,8 @@ import butterknife.OnClick;
 import io.github.weizc.itakler.common.app.Application;
 import io.github.weizc.itakler.common.app.Fragment;
 import io.github.weizc.itakler.common.widget.PortraitView;
+import io.github.weizc.italker.factory.Factory;
+import io.github.weizc.italker.factory.net.UploadHelper;
 import io.github.weizc.italker.push.R;
 import io.github.weizc.italker.push.frags.media.GalleryFragment;
 
@@ -97,6 +99,14 @@ public class UpdateInfoFragment extends Fragment implements GalleryFragment.Imag
         // 拿到本地文件的地址
         final String localPath = uri.getPath();
         Log.e("TAG", "localPath:" + localPath);
+        Factory.runOnAsync(new Runnable() {
+            @Override
+            public void run() {
+               String url =  UploadHelper.upLoadPortrait(localPath);
+                Log.e("TAG", "url:" + url);
+
+            }
+        });
 
     }
 }
