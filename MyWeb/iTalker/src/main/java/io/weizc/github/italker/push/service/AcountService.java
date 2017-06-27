@@ -1,10 +1,9 @@
 package io.weizc.github.italker.push.service;
 
-import io.weizc.github.italker.push.bean.User;
+import io.weizc.github.italker.push.bean.db.User;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.awt.*;
 
 /**
  * Created by Vzc on 2017/6/5.
@@ -16,6 +15,7 @@ public class AcountService {
     public String get(){
         return "YOU get the login.";
     }
+
     @POST
     @Path("/login")
     @Consumes(MediaType.APPLICATION_JSON)
