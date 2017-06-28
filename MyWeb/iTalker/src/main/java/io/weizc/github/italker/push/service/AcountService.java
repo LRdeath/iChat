@@ -1,6 +1,9 @@
 package io.weizc.github.italker.push.service;
 
+import io.weizc.github.italker.push.bean.api.account.RegisterModel;
+import io.weizc.github.italker.push.bean.api.user.UserInfoModel;
 import io.weizc.github.italker.push.bean.db.User;
+import io.weizc.github.italker.push.factory.UserFactory;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -17,12 +20,21 @@ public class AcountService {
     }
 
     @POST
-    @Path("/login")
+    @Path("/register")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public User post(){
-        User user = new User();
-        user.setName("二狗子");
+    public UserInfoModel post(RegisterModel model){
+        UserInfoModel user = new UserInfoModel();
+        if (UserFactory.fingByphoneUser(model.getAccount())!=null){
+            user.setName("手机号重复！");
+            return user;
+        }
+        if (UserFactory.fingByname(model.getName())!=null){
+            user.setName("用户名重复！");
+            return user;
+        }
+        UserFactory.register(model.getAccount(),model.getPassword(),model.getName());
+        user.setName(model.getName());
         user.setSex(1);
         return user;
     }
