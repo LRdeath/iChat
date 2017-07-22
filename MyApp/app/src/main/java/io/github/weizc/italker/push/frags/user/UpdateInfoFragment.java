@@ -1,4 +1,4 @@
-package io.github.weizc.italker.push.frags.account;
+package io.github.weizc.italker.push.frags.user;
 
 
 import android.content.Intent;

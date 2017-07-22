@@ -3,19 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="io.github.weizc.italker.push.activities.AccountActivity">
+    tools:context="io.github.weizc.italker.push.activities.UserActivity">
 
-    <ImageView
-        android:id="@+id/im_bg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:foreground="@color/maskChatHeader"/>
     <FrameLayout
-        android:id="@+id/account_containter"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-
-
 </FrameLayout>

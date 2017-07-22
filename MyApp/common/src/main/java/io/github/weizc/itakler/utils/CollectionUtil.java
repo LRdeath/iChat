@@ -1,4 +1,4 @@
-package io.github.weizc.itakler.common.utils;
+package io.github.weizc.itakler.utils;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

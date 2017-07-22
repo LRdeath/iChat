@@ -3,6 +3,7 @@ package io.github.weizc.italker.push;
 import android.util.Log;
 
 import io.github.weizc.itakler.common.app.Activity;
+import io.github.weizc.italker.push.activities.AccountActivity;
 import io.github.weizc.italker.push.activities.MainActivity;
 import io.github.weizc.italker.push.frags.assist.PermissionsFragment;
 
@@ -19,7 +20,7 @@ public class LaunchActivity extends Activity {
         super.onResume();
         Log.d("LaunchActivity","---OnResume---");
         if (PermissionsFragment.hadAllPermission(this,getSupportFragmentManager())){
-            MainActivity.show(this);
+            AccountActivity.show(this);
             finish();
         }
     }

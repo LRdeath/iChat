@@ -12,7 +12,7 @@ import com.alibaba.sdk.android.oss.model.PutObjectResult;
 
 import java.util.Date;
 
-import io.github.weizc.itakler.common.utils.HashUtil;
+import io.github.weizc.itakler.utils.HashUtil;
 import io.github.weizc.italker.factory.Factory;
 
 /**

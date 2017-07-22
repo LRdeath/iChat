@@ -1,4 +1,4 @@
-package io.github.weizc.itakler.common.utils;
+package io.github.weizc.itakler.utils;
 
 import java.io.File;
 import java.io.FileInputStream;

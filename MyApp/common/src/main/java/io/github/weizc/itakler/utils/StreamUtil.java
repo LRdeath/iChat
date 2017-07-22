@@ -1,4 +1,4 @@
-package io.github.weizc.itakler.common.utils;
+package io.github.weizc.itakler.utils;
 
 import android.text.TextUtils;
 

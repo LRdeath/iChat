@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="F:/SDK/gradle/gradle-3.4" />
+        <option name="gradleHome" value="E:/AS_SDK/gradle/gradle-3.4" />
         <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
