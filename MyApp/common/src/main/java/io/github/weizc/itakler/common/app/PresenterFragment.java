@@ -5,12 +5,13 @@ import android.content.Context;
 import io.github.weizc.itakler.factory.presenter.BaseContract;
 
 /**
- * Created by Administrator on 2017/7/21.
+ * Created by Vzer .
+ * Date: 2017/7/21.
  */
 
 public abstract class PresenterFragment<Presenter extends BaseContract.Presenter>extends Fragment
         implements BaseContract.View<Presenter>{
-    protected Presenter mPresenter;
+    protected Presenter mPresenter;//子类可复用的Persenter
 
     @Override
     public void onAttach(Context context) {
@@ -23,7 +24,7 @@ public abstract class PresenterFragment<Presenter extends BaseContract.Presenter
      * 初始化Presenter
      * @return Presenter
      */
-    protected abstract void initPresenter();
+    protected abstract Presenter initPresenter();
 
     @Override
     public void showError(int str) {
@@ -33,7 +34,7 @@ public abstract class PresenterFragment<Presenter extends BaseContract.Presenter
 
     @Override
     public void showLoading() {
-        // TODO: 2017/7/21
+        // TODO: 显示一个Loading
     }
 
     @Override

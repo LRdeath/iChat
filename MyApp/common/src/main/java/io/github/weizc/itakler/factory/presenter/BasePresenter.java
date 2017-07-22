@@ -9,13 +9,13 @@ package io.github.weizc.itakler.factory.presenter;
  * @param <T>
  */
 public class BasePresenter<T extends BaseContract.View>implements BaseContract.Presenter {
-    private T mView;
+    protected T mView;
 
     public BasePresenter(T view) {
         setView(view);
     }
     /**
-     * 设置一个view,子类可以复写
+     * P层和V层的绑定操作
      * @param view
      */
     @SuppressWarnings("unchecked")

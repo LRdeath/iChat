@@ -7,7 +7,7 @@ import io.github.weizc.itakler.factory.presenter.BaseContract;
  */
 
 public interface RegisterContract {
-    interface View<Presenter> extends BaseContract.View{
+    interface View extends BaseContract.View<Presenter>{
         //注册成功
         void registerSuccess();
     }
