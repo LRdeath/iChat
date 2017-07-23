@@ -6,6 +6,8 @@ import android.support.annotation.StringRes;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.raizlabs.android.dbflow.config.FlowConfig;
+import com.raizlabs.android.dbflow.config.FlowManager;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -15,6 +17,7 @@ import io.github.weizc.itakler.factory.data.DataSource;
 import io.github.weizc.italker.factory.model.api.RspModel;
 import io.github.weizc.italker.factory.model.api.account.AccountRspModel;
 import io.github.weizc.italker.factory.model.db.User;
+import io.github.weizc.italker.factory.persistence.Account;
 import io.github.weizc.italker.factory.utils.DBFlowExclusionStrategy;
 
 /**
@@ -27,13 +30,26 @@ public class Factory {
     //单例模式
     private static final Factory instance;
     private final Executor executor;
+
     static {
         instance = new Factory();
     }
 
+    /**
+     * Factory中的初始化
+     */
+    public static void setup() {
+        //初始化数据库
+        FlowManager.init(new FlowConfig.Builder(app())
+                .openDatabasesOnInit(true)//数据初始化的时候开始打开
+                .build());
+        //持久化数据 进行初始化
+        Account.load(app());
+    }
+
     private final Gson gson;
 
-    private Factory(){
+    private Factory() {
         //新建一个4个线程的线程池
         executor = Executors.newFixedThreadPool(4);
         //初始化gson的格式
@@ -48,12 +64,14 @@ public class Factory {
 
     /**
      * 得到全局的Application
+     *
      * @return Application
      */
     public static Application app() {
         return Application.getInstance();
     }
-    public static void runOnAsync(Runnable runnable){
+
+    public static void runOnAsync(Runnable runnable) {
         //拿到单例，得到线程池，然后异步执行
         instance.executor.execute(runnable);
     }
@@ -74,7 +92,7 @@ public class Factory {
      * @param model    RspModel
      * @param callback DataSource.FailedCallback 用于返回一个错误的资源Id
      */
-    public static void decodeRspCode(RspModel  model, DataSource.Callback<User> callback) {
+    public static void decodeRspCode(RspModel model, DataSource.Callback<User> callback) {
         // 进行Code区分
         switch (model.getCode()) {
             case RspModel.SUCCEED:
@@ -129,15 +147,23 @@ public class Factory {
         }
 
     }
+
     private static void decodeRspCode(@StringRes final int resId,
                                       final DataSource.FailedCallback callback) {
         if (callback != null)
             callback.onFailLoaded(resId);
     }
+
     /**
      * 收到账户退出的消息需要进行账户退出重新登录
      */
     private void logout() {
 
     }
+
+    public static void diapatchPush(String message) {
+
+    }
+
+
 }

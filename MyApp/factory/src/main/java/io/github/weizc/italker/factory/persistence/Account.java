@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
+import com.raizlabs.android.dbflow.sql.language.SQLite;
+
 import io.github.weizc.italker.factory.Factory;
 import io.github.weizc.italker.factory.model.api.account.AccountRspModel;
 import io.github.weizc.italker.factory.model.db.User;
@@ -20,7 +22,7 @@ public class Account {
     private static final String KEY_ACCOUNT = "KEY_ACCOUNT";
 
     // 设备的推送Id
-    private static String pushId;
+    private static String pushId = "fsaf";
     // 设备Id是否已经绑定到了服务器
     private static boolean isBind;
     // 登录状态的Token，用来接口请求
@@ -49,7 +51,7 @@ public class Account {
     }
 
     /**
-     * 进行数据加载
+     * 进行初始化数据加载
      */
     public static void load(Context context) {
         SharedPreferences sp = context.getSharedPreferences(Account.class.getName(),
@@ -142,18 +144,14 @@ public class Account {
     /**
      * 获取当前登录的用户信息
      *
-     *
-     *
-     *
      */
     public static User getUser() {
         // 如果为null返回一个new的User，其次从数据库查询
-       /* return TextUtils.isEmpty(userId) ? new User() : SQLite.select()
+        return TextUtils.isEmpty(userId) ? new User() : SQLite.select()
                 .from(User.class)
-                .where(User_Table.id.eq(userId))
-                .querySingle();*/
-        // TODO: 2017/7/22
-       return null;
+                .where()//User_DB.id.eq(userId)
+                .querySingle();
+
     }
 
     /**

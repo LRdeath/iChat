@@ -59,4 +59,12 @@ public class Network {
                 .build();
         return  instance.retrofit;
     }
+
+    /**
+     * 返回一个网络请求接口
+     * @return
+     */
+    public static RemoteService remote(){
+        return Network.getRetrofit().create(RemoteService.class);
+    }
 }

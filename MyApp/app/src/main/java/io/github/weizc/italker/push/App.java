@@ -1,6 +1,7 @@
 package io.github.weizc.italker.push;
 
 import io.github.weizc.itakler.common.app.Application;
+import io.github.weizc.italker.factory.Factory;
 
 /**
  * @author Vzc  Email:newlr@foxmail.com
@@ -9,4 +10,10 @@ import io.github.weizc.itakler.common.app.Application;
  */
 
 public class App extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        //调用Factory进行初始化
+        Factory.setup();
+    }
 }
