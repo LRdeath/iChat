@@ -17,8 +17,6 @@ import io.github.weizc.italker.factory.persistence.Account;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.http.POST;
 
 /**
  * Created by Vzer.
@@ -46,7 +44,9 @@ public class AccountHelper {
         String pushId = Account.getPushId();
         if (TextUtils.isEmpty(pushId))return;
         //调用Retrofit对我们的网络请求接口做代理;
-        // TODO: 2017/7/23  
+        RemoteService service = Network.remote();
+        Call<RspModel<AccountRspModel>> call = service.accountBind(pushId);
+        call.enqueue(new AccountCallBack(callback));
     }
 
     /**

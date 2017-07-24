@@ -4,9 +4,12 @@ import io.github.weizc.italker.factory.model.api.RspModel;
 import io.github.weizc.italker.factory.model.api.account.AccountRspModel;
 import io.github.weizc.italker.factory.model.api.account.LoginModel;
 import io.github.weizc.italker.factory.model.api.account.RegisterModel;
+import io.github.weizc.italker.factory.model.api.user.UserUpdateeModel;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 /**
  * Created by Vzer.
@@ -30,4 +33,16 @@ public interface RemoteService {
      */
     @POST("account/login")
     Call<RspModel<AccountRspModel>> accountLogin(@Body LoginModel model);
+
+    /**
+     * 登录接口
+     * @param pushId 设备Id
+     * @return 返回的是RspModel<AccountRspModel>
+     */
+    @POST("account/bind/{pushId}")
+    Call<RspModel<AccountRspModel>> accountBind(@Path(encoded = true,value = "pushId") String pushId);
+
+    //用户更新网络请求接口
+    @PUT("user")
+    Call<RspModel<AccountRspModel>> userUpdate(@Body UserUpdateeModel model);
 }

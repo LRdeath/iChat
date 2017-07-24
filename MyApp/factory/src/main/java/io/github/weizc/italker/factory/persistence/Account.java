@@ -9,6 +9,7 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 import io.github.weizc.italker.factory.Factory;
 import io.github.weizc.italker.factory.model.api.account.AccountRspModel;
 import io.github.weizc.italker.factory.model.db.User;
+import io.github.weizc.italker.factory.model.db.User_Table;
 
 /**
  * @author qiujuer Email:qiujuer@live.cn
@@ -149,9 +150,8 @@ public class Account {
         // 如果为null返回一个new的User，其次从数据库查询
         return TextUtils.isEmpty(userId) ? new User() : SQLite.select()
                 .from(User.class)
-                .where()//User_DB.id.eq(userId)
+                .where(User_Table.id.eq(userId))
                 .querySingle();
-
     }
 
     /**

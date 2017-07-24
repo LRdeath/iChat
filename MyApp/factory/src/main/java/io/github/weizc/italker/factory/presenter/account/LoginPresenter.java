@@ -40,7 +40,6 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
             LoginModel model = new LoginModel(phone,password);
             //网络请求
             //传递数据,进行登录操作
-            // TODO: 2017/7/21
             AccountHelper.login(model,this);
         }
     }
